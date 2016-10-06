@@ -16,7 +16,7 @@ var githubDocRoot = "https://github.com/inclusive-design/guide.inclusivedesign.c
 var path = require("path");
 var fs = require("fs");
 var docsCore = require("docs-core");
-var guidelinesHelpers = require('./helpers/idg.js');
+var fluidHelpers = require('./helpers/idg.js');
 var siteStructure = JSON.parse(fs.readFileSync("site-structure.json"));
 
 // We locate the images within the src/documents directory so that images can
@@ -58,7 +58,7 @@ module.exports = {
                 "/principles/Interconnectedness.html": "/insights/Interconnectedness.html",
                 "/principles/OneSizeFitsOne.html": "/insights/OneSizeFitsOne.html",
                 "/principles/UserContinuedDesign.html": "/insights/UserContinuedDesign.html",
-                "/principles/VirtuousCycles.html": "/insights/VirtuousCycles.html"         
+                "/principles/VirtuousCycles.html": "/insights/VirtuousCycles.html"
             }
         },
         handlebars: {
@@ -67,7 +67,8 @@ module.exports = {
                 getGithubLocation: docsCore.helpers.makeGithubLocationHelper(githubDocRoot),
                 getRelativeUrl: docsCore.helpers.getRelativeUrl,
                 ifEqual: docsCore.helpers.ifEqual,
-                getCategoryIcon: guidelinesHelpers.helpers.getCategoryIcon
+                getCategoryIcon: fluidHelpers.helpers.getCategoryIcon,
+                fluidHelpers_figure: fluidHelpers.helpers.getFigure
             },
             partials: {
                 headMatter: fs.readFileSync(partialsDir + '/' + 'head-matter.html.handlebars', 'utf8'),

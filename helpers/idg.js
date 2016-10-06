@@ -28,4 +28,18 @@ module.exports.helpers.getCategoryIcon = function (category) {
         default:
             return;
     }
-}
+};
+
+// Returns a figure block
+// src: source file of the figure
+// caption: figure caption
+// alt: alt text for figure image
+
+module.exports.helpers.getFigure = function (src, caption, altText) {
+    return "<figure>" +
+            "[![" + altText + "](" + src + ")](" + src + ")" +
+            "<figcaption>" +
+            caption +
+            "</figcaption>" +
+            "</figure>";
+};
