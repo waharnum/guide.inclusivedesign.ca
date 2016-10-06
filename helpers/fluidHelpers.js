@@ -31,15 +31,17 @@ module.exports.helpers.getCategoryIcon = function (category) {
 };
 
 // Returns a figure block
+// valid parameters are:
 // src: source file of the figure
 // caption: figure caption
 // alt: alt text for figure image
 
-module.exports.helpers.getFigure = function (src, caption, altText) {
+module.exports.helpers.getFigure = function (options) {
+    var namedParams = options.hash;
     return "<figure>" +
-            "[![" + altText + "](" + src + ")](" + src + ")" +
+            "[![" + namedParams.alt + "](" + namedParams.src + ")](" + namedParams.src + ")" +
             "<figcaption>" +
-            caption +
+            namedParams.caption +
             "</figcaption>" +
             "</figure>";
 };
