@@ -16,7 +16,7 @@ var githubDocRoot = "https://github.com/inclusive-design/guide.inclusivedesign.c
 var path = require("path");
 var fs = require("fs");
 var docsCore = require("docs-core");
-var fluidHelpers = require('./helpers/idg.js');
+var fluidHelpers = require('./helpers/fluidHelpers.js');
 var siteStructure = JSON.parse(fs.readFileSync("site-structure.json"));
 
 // We locate the images within the src/documents directory so that images can
@@ -67,7 +67,7 @@ module.exports = {
                 getGithubLocation: docsCore.helpers.makeGithubLocationHelper(githubDocRoot),
                 getRelativeUrl: docsCore.helpers.getRelativeUrl,
                 ifEqual: docsCore.helpers.ifEqual,
-                getCategoryIcon: fluidHelpers.helpers.getCategoryIcon,
+                fluidHelpers_categoryIcon: fluidHelpers.helpers.getCategoryIcon,
                 fluidHelpers_figure: fluidHelpers.helpers.getFigure
             },
             partials: {
